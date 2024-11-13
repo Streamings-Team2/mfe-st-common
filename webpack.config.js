@@ -65,7 +65,9 @@ module.exports = (_, argv) => ({
       name: "mf_st_common",
       filename: "remoteEntry.js",
       remotes: {},
-      exposes: {'./Common': './src/components/Common.tsx'},
+      exposes: {
+       './Button':'./src/components/Buttons/ButtonComponent.tsx'
+        },
       shared: {
         ...deps,
         react: {
