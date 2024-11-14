@@ -51,7 +51,7 @@ const TableComponent = <T, O,>({headers, data, editActions, optionsActions}:Prop
                             <tr key={i}>
                                 {headers.length
                                     ? (
-                                        headers.map(header => {
+                                        headers.map((header,i) => {
                                             // Object.keys(d.element).some(keyEl => keyEl === header.field) ||
                                             //     header.fieldType === 'actions' || 
                                             //     header.fieldType === 'checkbox'
@@ -62,44 +62,44 @@ const TableComponent = <T, O,>({headers, data, editActions, optionsActions}:Prop
                                             ) {
                                                 if (header.fieldType === 'text') {
                                                     return (
-                                                        <td data-label={header.text}>
+                                                        <td data-label={header.text} key={i}>
                                                             {d[header.field]}
                                                         </td>
                                                     )
                                                 }else if (header.fieldType === 'date') {
                                                     return (
-                                                        <td data-label={header.text}>
+                                                        <td data-label={header.text} key={i}>
                                                             {d[header.field]}
                                                         </td>
                                                     )
                                                 }else if (header.fieldType === 'link') {
                                                     return (
-                                                        <td data-label={header.text}>
+                                                        <td data-label={header.text} key={i}>
                                                             {d[header.field]}
                                                         </td>
                                                     )
                                                 }else if (header.fieldType === 'button-state') {
                                                     return (
-                                                        <td data-label={header.text}>
+                                                        <td data-label={header.text} key={i}>
                                                             {d[header.field]}
                                                         </td>
                                                     )
                                                 }else if (header.fieldType === 'dolar') {
                                                     return (
-                                                        <td data-label={header.text}>
+                                                        <td data-label={header.text} key={i}>
                                                         {d[header.field]}
                                                         </td>
                                                     )
                                                 }else if (header.fieldType === 'checkbox') {
                                                     return (
-                                                        <label>
+                                                        <label key={i}>
                                                             <input type="checkbox" onClick={()=>handleChechedClick()}/>
                                                         </label>
                                                     )
                                                 }else if (header.fieldType === 'actions') {
                                                     return (
-                                                        <td >
-                                                            <div key={d.id}>
+                                                        <td key={i}>
+                                                            <div key={d.id} >
                                                                 actionss
                                                                 <PopoverComponent 
                                                                     trigger={
@@ -138,7 +138,7 @@ const TableComponent = <T, O,>({headers, data, editActions, optionsActions}:Prop
                                                     )
                                                 }else {
                                                     return (
-                                                        <td >
+                                                        <td key={i}>
                                                             <div
                                                                 key={header.field}>
                                                                 ...(not found header FieldType )
@@ -148,7 +148,7 @@ const TableComponent = <T, O,>({headers, data, editActions, optionsActions}:Prop
                                                 }
                                             } else {
                                                 return (
-                                                    <td >
+                                                    <td key={i}>
                                                         <div
                                                             key={header.field}>
                                                             ...
