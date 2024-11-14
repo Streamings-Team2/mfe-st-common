@@ -2,6 +2,7 @@ import React from 'react'
 import { FieldTable, HeadersTable, OptionsActions } from '../../Models/Table'
 import PopoverComponent from '../PopoverComponent/PopoverComponent'
 import "./table.css"
+import StateComponent from '../StateComponent/StateComponent'
 
 type Props<T, O> = {
     headers: HeadersTable[],
@@ -81,7 +82,7 @@ const TableComponent = <T, O,>({headers, data, editActions, optionsActions}:Prop
                                                 }else if (header.fieldType === 'button-state') {
                                                     return (
                                                         <td data-label={header.text} key={i}>
-                                                            {d[header.field]}
+                                                            <StateComponent status={d[header.field]} text={d[header.field]}/>
                                                         </td>
                                                     )
                                                 }else if (header.fieldType === 'dolar') {
@@ -169,7 +170,6 @@ const TableComponent = <T, O,>({headers, data, editActions, optionsActions}:Prop
                 </>
             ) : (
                 <tr>
-                    <td>Sin items</td>
                 </tr>
             )}
             </tbody>
