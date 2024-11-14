@@ -70,6 +70,10 @@ module.exports = (_, argv) => ({
         './PopoverComponent': './src/components/PopoverComponent/PopoverComponent.tsx',
         './TableComponent': './src/components/TableComponent/TableComponent.tsx',
         './Button': './src/components/Button/Button.tsx',
+        './LabelComponent': './src/components/LabelComponent/LabelComponent.tsx',
+        './PaginationComponent': './src/components/PaginationComponent/PaginationComponent.tsx',
+        './SelectComponent': './src/components/SelectComponent/SelectComponent.tsx',
+        './OptionComponent': './src/components/OptionComponent/OptionComponent.tsx',
       },
       shared: {
         ...deps,
