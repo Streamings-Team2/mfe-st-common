@@ -74,6 +74,7 @@ module.exports = (_, argv) => ({
         './PaginationComponent': './src/components/PaginationComponent/PaginationComponent.tsx',
         './SelectComponent': './src/components/SelectComponent/SelectComponent.tsx',
         './OptionComponent': './src/components/OptionComponent/OptionComponent.tsx',
+        './InputComponent': './src/components/InputComponent/InputComponent.tsx',
       },
       shared: {
         ...deps,
